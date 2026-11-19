@@ -27,19 +27,91 @@ Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "uk"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
+[CustomMessages]
+EqTitle=Personal equalizer configuration
+ru.EqTitle=Настройка персонального эквалайзера
+uk.EqTitle=Налаштування персонального еквалайзера
+EqSubtitle=Select your personal EQ file (optional)
+ru.EqSubtitle=Выберите файл настроек эквалайзера (необязательно)
+uk.EqSubtitle=Виберіть файл налаштувань еквалайзера (необов’язково)
+EqInstructions=Select a .txt file with your headphone EQ filters, or leave the field empty to skip importing a personal EQ.
+ru.EqInstructions=Выберите файл .txt с фильтрами эквалайзера для наушников или оставьте поле пустым, чтобы пропустить импорт.
+uk.EqInstructions=Виберіть файл .txt із фільтрами еквалайзера для навушників або залиште поле порожнім, щоб пропустити імпорт.
+EqFileLabel=Personal EQ file (optional):
+ru.EqFileLabel=Файл эквалайзера (необязательно):
+uk.EqFileLabel=Файл еквалайзера (необов’язково):
+EqFileFilter=Text files (*.txt)|*.txt|All files (*.*)|*.*
+ru.EqFileFilter=Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*
+uk.EqFileFilter=Текстові файли (*.txt)|*.txt|Усі файли (*.*)|*.*
+EqInvalidFile=Choose a valid personal EQ .txt file before continuing.
+ru.EqInvalidFile=Чтобы продолжить, выберите существующий файл настроек эквалайзера в формате .txt.
+uk.EqInvalidFile=Щоб продовжити, виберіть наявний файл налаштувань еквалайзера у форматі .txt.
+DependencyStartError=Could not start the %1 installer.
+ru.DependencyStartError=Не удалось запустить установщик %1.
+uk.DependencyStartError=Не вдалося запустити інсталятор %1.
+DependencyExitError=The %1 installer ended with code %2. The PUBG audio configuration was not applied.
+ru.DependencyExitError=Установщик %1 завершился с кодом %2. Настройки звука PUBG не применены.
+uk.DependencyExitError=Інсталятор %1 завершився з кодом %2. Налаштування звуку PUBG не застосовано.
+CopyError=Could not copy %1 to %2.
+ru.CopyError=Не удалось скопировать %1 в %2.
+uk.CopyError=Не вдалося скопіювати %1 до %2.
+ReadError=Could not read %1.
+ru.ReadError=Не удалось прочитать %1.
+uk.ReadError=Не вдалося прочитати %1.
+WriteError=Could not write %1.
+ru.WriteError=Не удалось записать %1.
+uk.WriteError=Не вдалося записати %1.
+ConfigFolderMissing=Equalizer APO configuration folder was not found: %1
+ru.ConfigFolderMissing=Папка конфигурации Equalizer APO не найдена: %1
+uk.ConfigFolderMissing=Папку конфігурації Equalizer APO не знайдено: %1
+AutoApoCaption=AutoAPO
+ru.AutoApoCaption=AutoAPO
+uk.AutoApoCaption=AutoAPO
+AutoApoDescription=Automatic switching for PUBG
+ru.AutoApoDescription=Автоматическое включение для PUBG
+uk.AutoApoDescription=Автоматичне вмикання для PUBG
+AutoApoQuestion=Do you want to use AutoAPO to automatically turn the setup on when launching PUBG?%n%nIf not, you will be required to manually turn everything on in Configuration editor each time.
+ru.AutoApoQuestion=Хотите использовать AutoAPO, чтобы настройки автоматически включались при запуске PUBG?%n%nЕсли нет, вам придётся каждый раз вручную включать всё в Configuration Editor.
+uk.AutoApoQuestion=Бажаєте використовувати AutoAPO, щоб налаштування автоматично вмикалися під час запуску PUBG?%n%nЯкщо ні, вам доведеться щоразу вручну вмикати все в Configuration Editor.
+AutoApoYes=Yes, use AutoAPO (recommended)
+ru.AutoApoYes=Да, использовать AutoAPO (рекомендуется)
+uk.AutoApoYes=Так, використовувати AutoAPO (рекомендовано)
+AutoApoNo=No, I will turn everything on manually
+ru.AutoApoNo=Нет, я буду включать всё вручную
+uk.AutoApoNo=Ні, я вмикатиму все вручну
+AutoApoSetupError=AutoAPO could not be set up: %1%n%nThe audio setup itself is installed. You can start AutoAPO.exe from the release folder instead.
+ru.AutoApoSetupError=Не удалось настроить AutoAPO: %1%n%nСами настройки звука установлены. Вместо этого можно запустить AutoAPO.exe из папки релиза.
+uk.AutoApoSetupError=Не вдалося налаштувати AutoAPO: %1%n%nСамі налаштування звуку встановлено. Натомість можна запустити AutoAPO.exe з папки релізу.
+OpenEditor=Open Equalizer APO Configuration Editor
+ru.OpenEditor=Открыть редактор конфигурации Equalizer APO
+uk.OpenEditor=Відкрити редактор конфігурації Equalizer APO
+OpenPeace=Open Peace with _pubg-config selected
+ru.OpenPeace=Открыть Peace с выбранным профилем _pubg-config
+uk.OpenPeace=Відкрити Peace із вибраним профілем _pubg-config
+
 [Files]
 Source: "..\payload\EqualizerAPO-x64-1.4.2.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall ignoreversion
 Source: "..\payload\PeaceSetup.exe"; DestDir: "{tmp}"; Flags: deleteafterinstall ignoreversion
-Source: "..\payload\vst\*"; DestDir: "{tmp}\vst"; Flags: recursesubdirs createallsubdirs deleteafterinstall ignoreversion
+Source: "..\payload\vst\FabFilter Pro-MB.dll"; DestDir: "{tmp}\vst"; Flags: deleteafterinstall ignoreversion
+Source: "..\payload\vst\FabFilter Pro-C 2.dll"; DestDir: "{tmp}\vst"; Flags: deleteafterinstall ignoreversion
+Source: "..\payload\vst\FabFilter Pro-C 3.dll"; DestDir: "{tmp}\vst"; Flags: deleteafterinstall ignoreversion
+Source: "..\payload\vst\reacomp-standalone.dll"; DestDir: "{tmp}\vst"; Flags: deleteafterinstall ignoreversion
 Source: "..\payload\config.txt"; DestDir: "{tmp}"; Flags: deleteafterinstall ignoreversion
+; Kept in {tmp} (deleted when Setup exits) until the AutoAPO page decides whether to install it.
+Source: "..\auto-apo-switch\build\AutoAPO.exe"; DestDir: "{tmp}"; Flags: ignoreversion
 Source: "..\payload\compressor\*"; DestDir: "{tmp}\compressor"; Flags: recursesubdirs createallsubdirs deleteafterinstall ignoreversion
 
 [Code]
+const
+  ProMbDll = 'FabFilter Pro-MB.dll';
+  ProC3Dll = 'FabFilter Pro-C 3.dll';
+
 var
   EqFilePage: TInputFileWizardPage;
   EqSourceFile: String;
   UsePersonalEq: Boolean;
   EapoConfigDir: String;
+  AutoApoPage: TInputOptionWizardPage;
 
 function StartsWith(const Value, Prefix: String): Boolean;
 begin
@@ -115,12 +187,13 @@ var
 begin
   Result := Exec(FileName, '', '', SW_SHOW, ewWaitUntilTerminated, ResultCode);
   if not Result then begin
-    MsgBox('Could not start ' + ProductName + '.', mbError, MB_OK);
+    SuppressibleMsgBox(FmtMessage(CustomMessage('DependencyStartError'), [ProductName]),
+      mbError, MB_OK, IDOK);
     Exit;
   end;
   if ResultCode <> 0 then begin
-    MsgBox(ProductName + ' ended with code ' + IntToStr(ResultCode) +
-      '. The PUBG audio configuration was not changed.', mbError, MB_OK);
+    SuppressibleMsgBox(FmtMessage(CustomMessage('DependencyExitError'), [ProductName,
+      IntToStr(ResultCode)]), mbError, MB_OK, IDOK);
     Result := False;
   end;
 end;
@@ -353,8 +426,11 @@ end;
 
 procedure CopyRequiredFile(const SourceFile, DestinationFile: String);
 begin
+  if CompareText(SourceFile, DestinationFile) = 0 then
+    Exit;
   if not CopyFile(SourceFile, DestinationFile, False) then
-    RaiseException('Could not copy ' + ExtractFileName(SourceFile) + ' to ' + DestinationFile + '.');
+    RaiseException(FmtMessage(CustomMessage('CopyError'), [ExtractFileName(SourceFile),
+      DestinationFile]));
 end;
 
 procedure WriteReacompPreset(const SourceFile, DestinationFile, VstDir: String);
@@ -363,7 +439,7 @@ var
   I: Integer;
 begin
   if not LoadStringsFromFile(SourceFile, Lines) then
-    RaiseException('Could not read ' + SourceFile + '.');
+    RaiseException(FmtMessage(CustomMessage('ReadError'), [SourceFile]));
   for I := 0 to GetArrayLength(Lines) - 1 do
     StringChange(Lines[I], 'C:\Program Files\VSTPlugins\ReaPlugs\reacomp-standalone.dll',
       AddBackslash(VstDir) + 'reacomp-standalone.dll');
@@ -371,7 +447,7 @@ begin
     StringChange(Lines[I], 'C:\Program Files\EqualizerAPO\config\vst\reacomp-standalone.dll',
       AddBackslash(VstDir) + 'reacomp-standalone.dll');
   if not SaveStringsToFile(DestinationFile, Lines, False) then
-    RaiseException('Could not write ' + DestinationFile + '.');
+    RaiseException(FmtMessage(CustomMessage('WriteError'), [DestinationFile]));
 end;
 
 procedure CopyCompressorFolder(const SourceDir, DestinationDir, VstDir: String);
@@ -406,7 +482,7 @@ var
 begin
   EapoConfigDir := GetEapoConfigDir;
   if not DirExists(EapoConfigDir) then
-    RaiseException('Equalizer APO configuration folder was not found: ' + EapoConfigDir);
+    RaiseException(FmtMessage(CustomMessage('ConfigFolderMissing'), [EapoConfigDir]));
 
   BackupDir := AddBackslash(EapoConfigDir) + 'PUBG Audio Setup Backup ' +
     GetDateTimeString('yyyy-mm-dd hh-nn-ss', '-', '-');
@@ -423,21 +499,20 @@ begin
 
   CopyRequiredFile(ExpandConstant('{tmp}\vst\reacomp-standalone.dll'),
     AddBackslash(VstDir) + 'reacomp-standalone.dll');
-  CopyRequiredFile(ExpandConstant('{tmp}\vst\FabFilter Pro-MB.dll'),
-    AddBackslash(VstDir) + 'FabFilter Pro-MB.dll');
+  CopyRequiredFile(ExpandConstant('{tmp}\vst\') + ProMbDll, AddBackslash(VstDir) + ProMbDll);
   CopyRequiredFile(ExpandConstant('{tmp}\vst\FabFilter Pro-C 2.dll'),
     AddBackslash(VstDir) + 'FabFilter Pro-C 2.dll');
-  CopyRequiredFile(ExpandConstant('{tmp}\vst\FabFilter Pro-C 3.dll'),
-    AddBackslash(VstDir) + 'FabFilter Pro-C 3.dll');
+  CopyRequiredFile(ExpandConstant('{tmp}\vst\') + ProC3Dll, AddBackslash(VstDir) + ProC3Dll);
   CopyCompressorFolder(ExpandConstant('{tmp}\compressor'), CompressorDir, VstDir);
 
   if UsePersonalEq then begin
     if not MakePeaceConfig(EqSourceFile, AddBackslash(EapoConfigDir) + 'peace.txt') then
-      RaiseException('Could not create peace.txt from the selected EQ file.');
+      RaiseException(FmtMessage(CustomMessage('WriteError'), [AddBackslash(EapoConfigDir) +
+        'peace.txt']));
 
     PeacePreset := AddBackslash(EapoConfigDir) + '_pubg-config.peace';
     if not MakePeacePreset(EqSourceFile, PeacePreset) then
-      RaiseException('Could not create the _pubg-config Peace preset from the selected EQ file.');
+      RaiseException(FmtMessage(CustomMessage('WriteError'), [PeacePreset]));
     CopyRequiredFile(PeacePreset, AddBackslash(EapoConfigDir) + 'Last Configuration.peace');
     SetIniString('General', 'Selected Configuration', '_pubg-config',
       AddBackslash(EapoConfigDir) + 'peace.ini');
@@ -445,19 +520,94 @@ begin
 
   if not WriteMainConfigFromTemplate(ExpandConstant('{tmp}\config.txt'),
     AddBackslash(EapoConfigDir) + 'config.txt', UsePersonalEq) then
-    RaiseException('Could not write Equalizer APO config.txt.');
+    RaiseException(FmtMessage(CustomMessage('WriteError'), [AddBackslash(EapoConfigDir) +
+      'config.txt']));
+end;
+
+{ AutoAPO identifies an entry by its command line without the leading '#', trimmed. }
+function AutoApoKey(const Line: String): String;
+begin
+  Result := Trim(Line);
+  if (Result <> '') and (Result[1] = '#') then
+    Result := Trim(Copy(Result, 2, MaxInt));
+end;
+
+{ Returns the entries AutoAPO should switch: Pro-MB, Pro-C 2 and, with a personal EQ,
+  the Peace include. Read from the config.txt that was just written, so the keys match
+  its final plugin paths. }
+function AutoApoRules(const ConfigFile: String): TArrayOfString;
+var
+  Lines: TArrayOfString;
+  I, Count: Integer;
+  Key: String;
+begin
+  Count := 0;
+  SetArrayLength(Result, 0);
+  if not LoadStringsFromFile(ConfigFile, Lines) then
+    RaiseException(FmtMessage(CustomMessage('ReadError'), [ConfigFile]));
+  for I := 0 to GetArrayLength(Lines) - 1 do begin
+    Key := AutoApoKey(Lines[I]);
+    if (StartsWith(Key, 'VSTPlugin:') and ((Pos(ProMbDll, Key) > 0) or
+        (Pos('FabFilter Pro-C 2.dll', Key) > 0))) or
+       (UsePersonalEq and (CompareText(Key, 'Include: peace.txt') = 0)) then
+      AddOutputLine(Result, Count, Key);
+  end;
+end;
+
+procedure SetUpAutoApo;
+var
+  InstallDir, Exe, SettingsDir, SettingsFile, ConfigFile: String;
+  Settings, Rules: TArrayOfString;
+  I, Count, ResultCode: Integer;
+begin
+  InstallDir := ExpandConstant('{autopf}\AutoAPO');
+  Exe := AddBackslash(InstallDir) + 'AutoAPO.exe';
+
+  { A running copy would lock the file and keep its old settings. Closing it keeps the
+    current APO state, like its own Exit command. }
+  Exec(ExpandConstant('{sys}\taskkill.exe'), '/F /IM AutoAPO.exe', '', SW_HIDE,
+    ewWaitUntilTerminated, ResultCode);
+  if ResultCode = 0 then
+    Sleep(500);
+
+  ForceDirectories(InstallDir);
+  CopyRequiredFile(ExpandConstant('{tmp}\AutoAPO.exe'), Exe);
+
+  ConfigFile := AddBackslash(GetEapoConfigDir) + 'config.txt';
+  Rules := AutoApoRules(ConfigFile);
+  Count := 0;
+  AddOutputLine(Settings, Count, ConfigFile);
+  AddOutputLine(Settings, Count, 'TslGame.exe');
+  for I := 0 to GetArrayLength(Rules) - 1 do
+    AddOutputLine(Settings, Count, Rules[I]);
+  SettingsDir := ExpandConstant('{localappdata}\AutoAPO');
+  SettingsFile := AddBackslash(SettingsDir) + 'settings.txt';
+  ForceDirectories(SettingsDir);
+  { AutoAPO reads its settings as UTF-8 and expects no byte-order mark. }
+  if not SaveStringsToUTF8FileWithoutBOM(SettingsFile, Settings, False) then
+    RaiseException(FmtMessage(CustomMessage('WriteError'), [SettingsFile]));
+
+  { Start with Windows (same value AutoAPO's own checkbox writes) and the wizard's language. }
+  RegWriteStringValue(HKCU, 'Software\Microsoft\Windows\CurrentVersion\Run', 'AutoAPO',
+    '"' + Exe + '" --start-in-tray');
+  RegWriteStringValue(HKCU, 'Software\AutoAPO', 'Language', ActiveLanguage);
+
+  { Start it with the user's normal rights; AutoAPO does not need administrator mode. }
+  ExecAsOriginalUser(Exe, '', InstallDir, SW_SHOWNORMAL, ewNoWait, ResultCode);
 end;
 
 procedure InitializeWizard;
 begin
   EqFilePage := CreateInputFilePage(wpSelectDir,
-    'Personal equalizer configuration',
-    'Optionally select your personal EQ text file',
-    'This step is optional. Select the .txt file that contains your headphone EQ filters to ' +
-    'import it, or leave the field empty to install the PUBG audio setup without a personal EQ. ' +
-    'When a file is selected, the installer creates peace.txt with Device: all and Channel: all, ' +
-    'and removes a zero-dB preamp line.');
-  EqFilePage.Add('Personal EQ file (optional):', 'Text files (*.txt)|*.txt|All files (*.*)|*.*', '.txt');
+    CustomMessage('EqTitle'), CustomMessage('EqSubtitle'), CustomMessage('EqInstructions'));
+  EqFilePage.Add(CustomMessage('EqFileLabel'), CustomMessage('EqFileFilter'), '.txt');
+
+  { Shown after the installation finishes, right before the final page. }
+  AutoApoPage := CreateInputOptionPage(wpInfoAfter, CustomMessage('AutoApoCaption'),
+    CustomMessage('AutoApoDescription'), CustomMessage('AutoApoQuestion'), True, False);
+  AutoApoPage.Add(CustomMessage('AutoApoYes'));
+  AutoApoPage.Add(CustomMessage('AutoApoNo'));
+  AutoApoPage.SelectedValueIndex := 0;
 end;
 
 function NextButtonClick(CurPageID: Integer): Boolean;
@@ -467,8 +617,17 @@ begin
     EqSourceFile := Trim(EqFilePage.Values[0]);
     UsePersonalEq := EqSourceFile <> '';
     if UsePersonalEq and not FileExists(EqSourceFile) then begin
-      MsgBox('Choose a valid personal EQ .txt file before continuing.', mbError, MB_OK);
+      MsgBox(CustomMessage('EqInvalidFile'), mbError, MB_OK);
       Result := False;
+    end;
+  end;
+  if (CurPageID = AutoApoPage.ID) and (AutoApoPage.SelectedValueIndex = 0) then begin
+    try
+      SetUpAutoApo;
+    except
+      { The audio setup is already installed; report the problem and let the user finish. }
+      MsgBox(FmtMessage(CustomMessage('AutoApoSetupError'), [GetExceptionMessage]),
+        mbError, MB_OK);
     end;
   end;
 end;
@@ -479,13 +638,13 @@ begin
     Exit;
 
   if not IsEapoInstalled then begin
-    if not RunRequiredInstaller(ExpandConstant('{tmp}\EqualizerAPO-x64-1.4.2.exe'), 'Equalizer APO setup') then
+    if not RunRequiredInstaller(ExpandConstant('{tmp}\EqualizerAPO-x64-1.4.2.exe'), 'Equalizer APO') then
       Abort;
   end;
 
   EapoConfigDir := GetEapoConfigDir;
   if not FileExists(AddBackslash(EapoConfigDir) + 'Peace.exe') then begin
-    if not RunRequiredInstaller(ExpandConstant('{tmp}\PeaceSetup.exe'), 'Peace setup') then
+    if not RunRequiredInstaller(ExpandConstant('{tmp}\PeaceSetup.exe'), 'Peace') then
       Abort;
   end;
 
@@ -493,5 +652,5 @@ begin
 end;
 
 [Run]
-Filename: "{code:ReadEditorExe}"; Description: "Open Equalizer APO Configuration Editor"; Flags: postinstall nowait skipifsilent unchecked
-Filename: "{code:ReadPeaceExe}"; Parameters: "_pubg-config"; Description: "Open Peace with _pubg-config selected"; Flags: postinstall nowait skipifsilent unchecked; Check: ShouldOpenPeace
+Filename: "{code:ReadEditorExe}"; Description: "{cm:OpenEditor}"; Flags: postinstall nowait skipifsilent unchecked
+Filename: "{code:ReadPeaceExe}"; Parameters: "_pubg-config"; Description: "{cm:OpenPeace}"; Flags: postinstall nowait skipifsilent unchecked; Check: ShouldOpenPeace
